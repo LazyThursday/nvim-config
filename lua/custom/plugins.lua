@@ -63,10 +63,6 @@ local plugins = {
   },
 
   -- For saving worksapce
-  {
-    "mhinz/vim-startify",
-    lazy = false,
-  },
 
   -- To make a plugin not be loaded
   -- {
@@ -91,7 +87,10 @@ local plugins = {
     config = function()
       require("presence").setup({})
     end
-  }
+  },
+
+  -- markdown preview
+  { "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
 
 }
 
